@@ -14,12 +14,13 @@ data += s.recv(4)
 data += s.recv(4)
 data += s.recv(4)
 
-numbers = struct.unpack("IIII", data) #convert to big endian numbers
+numbers = struct.unpack("IIII", data) #convert hex_strings to integers
 result = sum(numbers)
 result = wrap_around(result)
-payload = struct.pack("I", result) #convert to little endian
+payload = struct.pack("I", result) #convert integer to hex_string
 
-print payload
+#! Used for debug purpose !#
+#print payload
 s.send(payload) 
 print s.recv(1024)
 s.close()
