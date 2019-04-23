@@ -10,7 +10,7 @@ data = s.recv(4)
 #print data 
 #print repr(data)
 #print data.encode('hex')
-number = struct.unpack("I", data)[0] #convert hex_string (string of an integer, in LITTLE-ENDIAN) received from server (or another client) to integer in LITTLE-ENDIAN
+number = struct.unpack("I", data)[0] #convert hex_string (string of an integer, in LITTLE-ENDIAN) received from server (or another client) to an integer 
 s.send(str(number))
 print s.recv(1024)
 s.close()
