@@ -8,8 +8,8 @@ print input #input is the hex_string in LITTLE-ENDIAN from server
 print repr(input)
 print input.encode('hex')
 
-converted = struct.unpack('i', input)[0]
-print converted #converted is the number BIG-ENDIAN
+converted = struct.unpack('I', input)[0]
+print converted #converted is the integer which is used to send to server
 
 #sh.interactive()
 sh.sendline(str(converted))
